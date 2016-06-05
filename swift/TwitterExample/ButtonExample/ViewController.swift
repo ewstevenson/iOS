@@ -66,7 +66,7 @@ class ViewController: UIViewController {
             swifter.getAccountVerifyCredentials(false, skipStatus: false, success: { (myInfo) -> Void in
                 
                 //Dictionary<String, JSONValue>? myinfo
-              //   print(myInfo)
+                print(myInfo)
                  //   print(myInfo?.count)
                 
                 
