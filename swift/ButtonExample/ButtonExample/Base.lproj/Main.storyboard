@@ -19,15 +19,30 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nvX-Pb-BDN">
                                 <rect key="frame" x="88" y="194" width="142" height="29"/>
+                                <state key="normal" title="Click This Button"/>
+                                <connections>
+                                    <action selector="buttonClicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="zLn-Lp-MSE"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="McS-g2-7s7">
+                                <rect key="frame" x="101" y="231" width="129" height="31"/>
                                 <state key="normal" title="Button"/>
+                                <connections>
+                                    <action selector="Button2Clicked:" destination="BYZ-38-t0r" eventType="primaryActionTriggered" id="y6B-dK-KiU"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="btnButton" destination="nvX-Pb-BDN" id="AAl-bn-bh7"/>
+                        <outlet property="btnButton2" destination="McS-g2-7s7" id="mVx-ec-duh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="360.5" y="489.5"/>
         </scene>
     </scenes>
 </document>
