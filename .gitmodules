@@ -1,0 +1,3 @@
+[submodule "swift/TwitterExample/Swifter"]
+	path = swift/TwitterExample/Swifter
+	url = https://github.com/mattdonnelly/Swifter.git
