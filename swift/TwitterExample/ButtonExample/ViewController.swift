@@ -62,25 +62,29 @@ class ViewController: UIViewController {
             
             */
             
+            /* Get user account info */
             swifter.getAccountVerifyCredentials(false, skipStatus: false, success: { (myInfo) -> Void in
-                
-                //Dictionary<String, JSONValue>? myinfo
-                print(myInfo)
-                 //   print(myInfo?.count)
-                
-                
-                
+            
+              //string of twiter user info
+              //print(myInfo)
+              //print(myInfo?.count)
+
+                for (k, v) in myInfo! {
+                    if (k == "screen_name") {
+                        print("Screen Name: \(v)")
+                    }
+                    
+                }
             }, failure: failureHandler)
 
         }
       
-        
+        // Login then run twitterloginsuccess
         swifter.authorizeWithCallbackURL(url, presentFromViewController: self, success: { _ in
             TwitterLoginSuccess()
             }, failure: failureHandler)
       
 
-        
         // end swifter
 
         
