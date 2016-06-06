@@ -12,7 +12,6 @@ import Social
 import SwifteriOS
 import SafariServices
 
-
 class ViewController: UIViewController {
 
     //swifter
