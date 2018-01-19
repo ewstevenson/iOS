@@ -1,0 +1,14 @@
+{
+  "name" : "GDPR Enforcement Plug-In",
+  "version" : "0.1",
+  "description" : "Excersize your right to be forgotten with this GDPR enforcement tool.",
+  "permissions": [ "cookies", "tabs", "http://*/*", "https://*/*" ],
+  "icons": { "16": "gdpr_16.png", "48": "gdpr_48.png", "128": "gdpr_128.png" },
+  "browser_action": {
+    "default_icon": "gdpr.png"
+  },
+  "background": {
+    "scripts": ["background.js"]
+  },
+  "manifest_version": 2
+}
