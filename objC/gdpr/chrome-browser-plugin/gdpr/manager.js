@@ -155,8 +155,16 @@ function reloadCookieTable() {
     var cell = row.insertCell(-1);
     cell.innerText = cookies.length;
     cell.setAttribute("class", "cookie_count");
-    row.insertCell(-1).innerText = "Request My Data";
-    row.insertCell(-1).innerText = "Forget Me!";
+    cell.style.textAlign = "center";
+    
+    var cell = row.insertCell(-1);
+    cell.innerText = "Request My Data";
+    cell.style.textAlign = "center";
+   
+    var cell = row.insertCell(-1);
+    cell.innerText = "Forget Me!";
+    cell.style.textAlign = "center";
+    
     var x = document.createElement("INPUT");
     x.setAttribute("type", "checkbox");
 
@@ -169,6 +177,7 @@ function reloadCookieTable() {
     }(domain));
     var cell = row.insertCell(-1);
     cell.appendChild(button);
+    cell.style.textAlign = "center";
     cell.setAttribute("class", "button");
   });
 }

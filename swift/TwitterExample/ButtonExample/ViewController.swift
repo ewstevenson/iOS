@@ -34,7 +34,6 @@ class ViewController: UIViewController {
         let url = NSURL(string: "swifter://success")!
         let swifter = Swifter(consumerKey: "0MvGLBs6Ndd2ox8nhAAWvNnA8", consumerSecret: "Qe1xcH14q0oXQwCYokx7PbLTVKpXAaRO4n1Zq3OKREILoEp92y")
 
-        
         func alertWithTitle(title: String, message: String) {
             let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
             alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: nil))
