@@ -23,26 +23,18 @@ td.cookie_count {
 <h2><center>Excersize your right to be forgotten!</center></h2>
 <center><img src="GDPR.png"></img></center>
 
-
-  <h2>List below are the tracking cookies. Please select and submit</h2>
-  <button id="remove_button">DELETE ALL!</button>
   <div id="filter_div">
-    Filter: <input id="filter" type="text">
-    <button>x</button>
+     <input hidden=true id="filter" type="text">
   </div>
   <br />
   <div id="summary_div">
-    Showing <span id="filter_count"></span> of <span id="total_count"></span> cookie domains.
+     <span id="filter_count"></span> <span id="total_count"></span> 
     <span id="delete_all_button"></span>
   </div>
   <br />
+  <form method="Post action="https://ews.consulting/gdpr/submit.php">
   <table id="cookies">
     <tr class="header">
-      <th align="center">Name</th>
-      <th align="center">#Cookies</th>
-      <th align="center">Request My Data</th>
-      <th align="center">Forget My Data</th>
-      <th align="center">Delete Local Tracking Cookie</th>
     </tr>
   </body>
 </html>

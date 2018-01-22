@@ -137,22 +137,68 @@ function reloadCookieTable() {
   reload_scheduled = false;
   var filter = select("#filter").value;
   var domains = cache.getDomains(filter);
+  select("#filter_count").innerText = domains.length;
+  select("#total_count").innerText = cache.getDomains().length;
+  select("#delete_all_button").innerHTML = "";
+  if (domains.length) {
+    var button = document.createElement("button");
+    button.onclick = removeAllForFilter;
+    button.innerText = "delete all " + domains.length;
+    select("#delete_all_button").appendChild(button);
+  }
+  resetTable();
   var table = select("#cookies");
-  var gdprCookies = '<center><font face="arial"><h1><center>Welcome to the GDPR enforcement tool</center></h1><h2><center>Excersize your right to be forgotten!</center></h2><center><img src="GDPR.png"></img></center>';
-
-    gdprCookies += '<form action="https://ews.consulting/gdpr/submit.php" method="post"><table>'; 
-    gdprCookies += "<tr><th align=center>Tracking Domain</th><th align=center>Cookie Count</th><th align=center>Request Data</th><th align=center>Forget Me</th></tr>";
+    var row = table.insertRow(-1);
+    var cell = row.insertCell(-1);
+    var html = '';
+    cell.innerHTML=html
+    cell.colSpan=2;
+    cell.style.textAlign = "center";
+    
+    var cell = row.insertCell(-1);
+    var html = '<a href="javascript:void(0);" onclick="requestAll();">select all</a>';
+    cell.innerHTML=html
+    cell.style.textAlign = "center";
+    
+    var cell = row.insertCell(-1);
+    var html = '<a href="ews.consulting">select all</a>';
+    cell.innerHTML=html
+    cell.style.textAlign = "center";
+ 
  domains.forEach(function(domain) {
 
     var cookies = cache.getCookies(domain);
+    var row = table.insertRow(-1);
+    row.insertCell(-1).innerText = domain;
 
-    gdprCookies += "<tr><td align=center>"+domain+"</td><td align=center>"+cookies.length+"</td>";
-    gdprCookies += '<td align=center><input type="checkbox" name="request_'+domain+'" id="request_'+domain+'" value="'+domain+'"></td>';
-    gdprCookies += '<td align=center><input type="checkbox" name="delete_'+domain+'" id="delete_'+domain+'" value="'+domain+'"></td>';
+    var cell = row.insertCell(-1);
+    cell.innerText = cookies.length;
+    cell.setAttribute("class", "cookie_count");
+    cell.style.textAlign = "center";
+    
+    var cell = row.insertCell(-1);
+    var html = '<input type="checkbox" id="request_'+domain+'" value="'+domain+'">';
+    cell.innerHTML=html
+    cell.style.textAlign = "center";
    
+    var cell = row.insertCell(-1);
+    var html = '<input type="checkbox" id="delete_'+domain+'" value="'+domain+'">';
+    cell.innerHTML=html
+    cell.style.textAlign = "center";
+/*
+    var button = document.createElement("button");
+    button.innerText = "nom";
+    button.onclick = (function(dom){
+      return function() {
+        removeCookiesForDomain(dom);
+      };
+    }(domain));
+    var cell = row.insertCell(-1);
+    cell.appendChild(button);
+    cell.style.textAlign = "center";
+    cell.setAttribute("class", "button");
+*/
   });
-gdprCookies+="</table><input type=submit value=submit></form>";
-document.write(gdprCookies);
 }
 function requestAll() {
  alert('all requests selected');
